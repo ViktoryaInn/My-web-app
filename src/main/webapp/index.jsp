@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
     <body>
-        <h2>Hello World!</h2>
-        <br/>
-        <a href="servlet">Click here to see servlet</a>
+        <h2>Hello ${name}</h2>
     </body>
 </html>
