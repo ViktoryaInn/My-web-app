@@ -16,31 +16,23 @@ public class FilesServlet extends HttpServlet{
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
-        //resp.getWriter().print("Hello from servlet");
         String sPath = req.getParameter("path");
         if(sPath == null || sPath.length() == 0)
             sPath = "C:/";
         Path path = Paths.get(sPath);
         File file = path.toFile();
+        SomeFile someFile = new SomeFile(path);
 
-        if(file.isDirectory()){
+        if(someFile.isDirectory()){
             req.setAttribute("now", new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date()));
-            req.setAttribute("path", sPath);
-            req.setAttribute("files", file.listFiles());
+            req.setAttribute("path", path);
+            req.setAttribute("files", someFile.getFiles(path));
             req.getRequestDispatcher("index.jsp").forward(req,resp);
         }
-        //Path workingDirectory = Paths.get(".").toAbsolutePath();
-        //String sPath = workingDirectory.toString();
 
-    }
-/*
-    public List<File> printFiles(File file){
-        List<File> listFiles = new ArrayList<>();
-        File[] files = file.listFiles();
-        for(File f: files){
-            file.lastModified()
+        if(someFile.isFile()){
+            resp.setContentType("application/octet-stream");
+            resp.setHeader("Content-Disposition","attachment;fileName=\""+someFile.getName()+"\"");
         }
-    }*/
-
-
+    }
 }

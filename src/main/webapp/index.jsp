@@ -9,27 +9,36 @@
     <body>
         <h3>${now}</h3>
         <h2>${path}</h2>
+        <hr/>
+        <img src="/img/icons8-folder-up-64.png" width="30" height="30">
+        <a href="/files?path=${path.getParent()}">Вверх</a>
         <table>
             <tr>
-                <th>Файл</th>
-                <th>Размер</th>
-                <th>Дата</th>
+                <th width="200">Файл</th>
+                <th width="200">Размер</th>
+                <th width="200">Дата</th>
             </tr>
-            <tr>
                 <c:forEach items="${files}" var="file">
-                    <td>
-                        <c:if test="${file.isDirectory()}">
-                            <img src="https://icon-library.com/images/directory-icon/directory-icon-6.jpg"width="50" height="50"/>
-                        </c:if>
-                        <c:if test="${file.isFile()}">
-                            <img src="https://img.icons8.com/pastel-glyph/2x/file.png" width="50" height="50"/>
-                        </c:if>
-                        <a href="/files?path=${file.getAbsolutePath()}">${file.getName()}</a>
-                    </td>
-                    <td>${file.length()} bytes</td>
-                    <td>${new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(file.lastModified())}</td>
+                    <c:if test="${!file.isHidden()}">
+                        <tr>
+                            <td>
+                                <c:if test="${file.isDirectory()}">
+                                    <img src="/img/icons8-folder-64.png" width="30" height="30"/>
+                                </c:if>
+                                <c:if test="${file.isFile()}">
+                                    <img src="/img/icons8-file-64.png" width="30" height="30"/>
+                                </c:if>
+                                <a href="/files?path=${file.getAbsolutePath()}">${file.getName()}</a>
+                            </td>
+                            <td>
+                                <c:if test="${file.isFile()}">
+                                    ${file.getSize()} B
+                                </c:if>
+                            </td>
+                            <td>${file.getLastModify()}</td>
+                        </tr>
+                    </c:if>
                 </c:forEach>
-            </tr>
         <table>
     </body>
 </html>
