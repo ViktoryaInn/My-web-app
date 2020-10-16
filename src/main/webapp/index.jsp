@@ -3,10 +3,11 @@
 
 <html>
     <head>
-            <meta charset="UTF-8">
-            <title>User files</title>
+        <meta charset="UTF-8">
+        <title>User files</title>
+        <link href="files.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
+    <body class="layer1" id="center">
         <h3>${now}</h3>
         <h2>${path}</h2>
         <hr/>
@@ -30,12 +31,12 @@
                                 </c:if>
                                 <a href="/files?path=${file.getAbsolutePath()}">${file.getName()}</a>
                             </td>
-                            <td>
+                            <td id="center">
                                 <c:if test="${file.isFile()}">
                                     ${file.getSize()} B
                                 </c:if>
                             </td>
-                            <td>${file.getLastModify()}</td>
+                            <td id="center">${file.getLastModify()}</td>
                         </tr>
                     </c:if>
                 </c:forEach>

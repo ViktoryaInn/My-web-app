@@ -1,2 +1,6 @@
-FilesServlet.class
-SomeFile.class
+service\SomeFile.class
+service\UserProfile.class
+servlets\LogInServlet.class
+service\AccountService.class
+servlets\FilesServlet.class
+servlets\RegistrationServlet.class

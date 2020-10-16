@@ -1,0 +1,28 @@
+body{
+    background-color:#d0e4fe;
+}
+#center { text-align: center; }
+#left { text-align: left; }
+
+table {
+    margin: auto; /* Выравниваем таблицу по центру окна  */
+}
+
+a {
+    text-decoration: none; /* Убирает подчеркивание для ссылок */
+}
+
+a:hover {
+    text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+    color: #FA8072; /* Ссылка красного цвета */
+}
+
+.layer1{
+    font-family: cursive;
+    color: #d42c53
+}
+
+p{
+    font-family:"Times New Roman";
+    font-size:20px;
+}

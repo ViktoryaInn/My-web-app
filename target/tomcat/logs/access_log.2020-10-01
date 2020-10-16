@@ -1,7 +1,0 @@
-0:0:0:0:0:0:0:1 - - [01/Oct/2020:19:36:28 +0300] "GET /files?path=C:\ HTTP/1.1" 200 8466 http-bio-8888-exec-2 1437
-0:0:0:0:0:0:0:1 - - [01/Oct/2020:19:36:29 +0300] "GET /img/icons8-folder-64.png HTTP/1.1" 200 3548 http-bio-8888-exec-1 7
-0:0:0:0:0:0:0:1 - - [01/Oct/2020:19:36:29 +0300] "GET /img/icons8-folder-up-64.png HTTP/1.1" 200 3742 http-bio-8888-exec-3 8
-0:0:0:0:0:0:0:1 - - [01/Oct/2020:19:36:36 +0300] "GET /files?path=C:\ HTTP/1.1" 200 8466 http-bio-8888-exec-5 62
-0:0:0:0:0:0:0:1 - - [01/Oct/2020:19:36:36 +0300] "GET /img/icons8-folder-64.png HTTP/1.1" 304 - http-bio-8888-exec-4 2
-0:0:0:0:0:0:0:1 - - [01/Oct/2020:19:36:36 +0300] "GET /img/icons8-folder-up-64.png HTTP/1.1" 304 - http-bio-8888-exec-6 2
-0:0:0:0:0:0:0:1 - - [01/Oct/2020:19:36:38 +0300] "GET /files?path=C:\ HTTP/1.1" 200 8466 http-bio-8888-exec-8 23
