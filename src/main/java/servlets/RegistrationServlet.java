@@ -12,9 +12,12 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
+import java.sql.SQLException;
 
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
+
+    AccountService accountService = new AccountService();
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,11 +26,17 @@ public class RegistrationServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         if(email == null || login == null || password == null){
-            req.getRequestDispatcher("/registration").forward(req, resp);
+            req.getRequestDispatcher("registration.jsp").forward(req, resp);
             return;
         }
-        AccountService.addNewUser(new UserProfile(email, login, password));
-        req.getRequestDispatcher("logIn.jsp").forward(req,resp);
+
+        try {
+            if(accountService.addNewUser(login, password, email)){
+                req.getRequestDispatcher("logIn.jsp").forward(req,resp);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     @Override

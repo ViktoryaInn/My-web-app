@@ -1,6 +1,12 @@
+dbService\DBException.class
+servlets\LogInServlet.class
+dbService\executor\ResultHandler.class
+dbService\dao\UsersDAO.class
+service\AccountService.class
+dbService\executor\Executor.class
+dbService\DBService.class
 service\SomeFile.class
 service\UserProfile.class
-servlets\LogInServlet.class
-service\AccountService.class
 servlets\FilesServlet.class
+dbService\dataSets\UsersDataSet.class
 servlets\RegistrationServlet.class

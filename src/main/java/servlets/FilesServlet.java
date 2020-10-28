@@ -21,18 +21,29 @@ import java.util.List;
 @WebServlet("/files")
 public class FilesServlet extends HttpServlet{
 
+    AccountService accountService = new AccountService();
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
         String sessionId = req.getSession().getId();
-        UserProfile user = AccountService.getUserBySessionId(sessionId);
-        if(user == null){
-            req.getRequestDispatcher("/logIn.jsp");
+        String login;
+
+        if(!accountService.checkSessionID(sessionId)){
+            req.getRequestDispatcher("/logIn.jsp").forward(req, resp);
             return;
+        }else {
+            login = accountService.getLoginBySessionID(sessionId);
         }
+        /*
+        UserProfile user = AccountService.get(sessionId);
+        if(user == null){
+            req.getRequestDispatcher("/logIn.jsp").forward(req,resp);
+            return;
+        }*/
 
         String sPath = req.getParameter("path");
-        if(sPath.contains("C:\\Users\\" + user.getLogin())){
+        if(sPath.contains("C:\\Users\\" + login)){
             Path path = Paths.get(sPath);
             SomeFile someFile = new SomeFile(path);
 
@@ -57,7 +68,7 @@ public class FilesServlet extends HttpServlet{
                 out.close();
             }
         }else {
-            req.setAttribute("path", "C:\\Users\\" + user.getLogin());
+            req.setAttribute("path", "C:\\Users\\" + login);
             req.getRequestDispatcher("error.jsp").forward(req,resp);
         }
     }

@@ -1,6 +1,12 @@
 C:\Users\viki2\IdeaProjects\My web app\src\main\java\service\AccountService.java
 C:\Users\viki2\IdeaProjects\My web app\src\main\java\service\SomeFile.java
+C:\Users\viki2\IdeaProjects\My web app\src\main\java\dbService\dao\UsersDAO.java
 C:\Users\viki2\IdeaProjects\My web app\src\main\java\servlets\RegistrationServlet.java
 C:\Users\viki2\IdeaProjects\My web app\src\main\java\servlets\FilesServlet.java
+C:\Users\viki2\IdeaProjects\My web app\src\main\java\dbService\dataSets\UsersDataSet.java
 C:\Users\viki2\IdeaProjects\My web app\src\main\java\servlets\LogInServlet.java
+C:\Users\viki2\IdeaProjects\My web app\src\main\java\dbService\DBService.java
 C:\Users\viki2\IdeaProjects\My web app\src\main\java\service\UserProfile.java
+C:\Users\viki2\IdeaProjects\My web app\src\main\java\dbService\executor\ResultHandler.java
+C:\Users\viki2\IdeaProjects\My web app\src\main\java\dbService\DBException.java
+C:\Users\viki2\IdeaProjects\My web app\src\main\java\dbService\executor\Executor.java

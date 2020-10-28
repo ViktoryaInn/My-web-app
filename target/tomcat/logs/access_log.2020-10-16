@@ -1,8 +1,0 @@
-127.0.0.1 - - [16/Oct/2020:04:55:00 +0300] "GET /logIn HTTP/1.1" 200 537 http-bio-8000-exec-2 1195
-127.0.0.1 - - [16/Oct/2020:04:55:00 +0300] "GET /logIn HTTP/1.1" 200 537 http-bio-8000-exec-1 1194
-127.0.0.1 - - [16/Oct/2020:04:55:00 +0300] "GET /files.css HTTP/1.1" 304 - http-bio-8000-exec-4 8
-0:0:0:0:0:0:0:1 - - [16/Oct/2020:04:55:17 +0300] "POST /logIn HTTP/1.1" 200 538 http-bio-8000-exec-8 122
-0:0:0:0:0:0:0:1 - - [16/Oct/2020:04:55:26 +0300] "POST /registration HTTP/1.1" 200 537 http-bio-8000-exec-10 7
-0:0:0:0:0:0:0:1 - - [16/Oct/2020:04:55:32 +0300] "POST /logIn HTTP/1.1" 302 - http-bio-8000-exec-10 4
-0:0:0:0:0:0:0:1 - - [16/Oct/2020:04:55:33 +0300] "GET /files?path=C:\Users\viki2 HTTP/1.1" 200 26750 http-bio-8000-exec-10 577
-0:0:0:0:0:0:0:1 - - [16/Oct/2020:04:55:37 +0300] "GET /files?path=C:\Users HTTP/1.1" 200 306 http-bio-8000-exec-4 84
