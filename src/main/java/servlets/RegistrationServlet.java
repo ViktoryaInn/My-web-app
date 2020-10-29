@@ -20,6 +20,11 @@ public class RegistrationServlet extends HttpServlet {
     AccountService accountService = new AccountService();
 
     @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("registration.jsp").forward(req,resp);
+    }
+
+    @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
         String login = req.getParameter("login");
@@ -37,10 +42,5 @@ public class RegistrationServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-    @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("registration.jsp").forward(req,resp);
     }
 }

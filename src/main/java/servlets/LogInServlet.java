@@ -18,6 +18,11 @@ public class LogInServlet extends HttpServlet {
     AccountService accountService = new AccountService();
 
     @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("logIn.jsp").forward(req,resp);
+    }
+
+    @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
@@ -35,27 +40,5 @@ public class LogInServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-/*
-        UserProfile user = AccountService.getUserByLogin(login);
-        if(user == null){
-            req.getRequestDispatcher("registration.jsp").forward(req, resp);
-            return;
-        }
-
-        if(!password.equals(user.getPassword())){
-            req.getRequestDispatcher("logIn.jsp").forward(req,resp);
-            return;
-        }
-
-        AccountService.addNewSession(req.getSession().getId(), user);
-        String path = "http://localhost:8000/files?path=C:\\Users\\" + login;
-        resp.sendRedirect(path);
- */
     }
-
-    @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("logIn.jsp").forward(req,resp);
-    }
-
 }

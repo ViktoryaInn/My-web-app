@@ -35,12 +35,6 @@ public class FilesServlet extends HttpServlet{
         }else {
             login = accountService.getLoginBySessionID(sessionId);
         }
-        /*
-        UserProfile user = AccountService.get(sessionId);
-        if(user == null){
-            req.getRequestDispatcher("/logIn.jsp").forward(req,resp);
-            return;
-        }*/
 
         String sPath = req.getParameter("path");
         if(sPath.contains("C:\\Users\\" + login)){

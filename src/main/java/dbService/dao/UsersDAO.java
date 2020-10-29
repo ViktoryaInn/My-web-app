@@ -15,7 +15,7 @@ public class UsersDAO {
         executor = new Executor(connection);
     }
 
-    public UsersDataSet get(String login) throws SQLException {
+    public UsersDataSet get(String login) {
         try {
             return executor.execQuery(String.format("select * from users where login='%s'", login),
                     result -> {
@@ -33,9 +33,5 @@ public class UsersDAO {
 
     public void createTable() throws SQLException {
         executor.execUpdate("create table if not exists users (login varchar(256), password varchar(256), email varchar(256), primary key (login))");
-    }
-
-    public void dropTable() throws SQLException {
-        executor.execUpdate("drop table users");
     }
 }

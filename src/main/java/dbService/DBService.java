@@ -16,7 +16,7 @@ public class DBService {
     public DBService(){
         //this.connection = getH2Connection();
         this.connection = getMySQLConnection();
-        System.out.println("Сщудинение с СУБД выполнено.");
+        System.out.println("Соединение с СУБД выполнено!");
     }
 
     public UsersDataSet getUser(String login) throws SQLException {
@@ -29,18 +29,6 @@ public class DBService {
         dao.createTable();
         dao.insertUser(login, password, email);
         connection.commit();
-    }
-
-    public void cleanUp() throws SQLException {
-        UsersDAO dao = new UsersDAO(connection);
-        dao.dropTable();
-    }
-
-    public void printConnectInfo() throws SQLException {
-        System.out.println("DB name: " + connection.getMetaData().getDatabaseProductName());
-        System.out.println("DB version: " + connection.getMetaData().getDatabaseProductVersion());
-        System.out.println("Driver: " + connection.getMetaData().getDriverName());
-        System.out.println("Autocommit: " + connection.getAutoCommit());
     }
 
     private Connection getMySQLConnection() {
