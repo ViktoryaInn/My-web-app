@@ -25,13 +25,13 @@ public class UsersDAO {
     public String insertUser(String login, String password, String email) throws HibernateException {
         return (String)session.save(new UsersDataSet(login, password, email));
     }
-
+/*
     public String getUserLogin(String name) throws HibernateException{
         Criteria criteria = session.createCriteria(UsersDataSet.class);
         return ((UsersDataSet)criteria.add(Restrictions.eq("name", name)).uniqueResult()).getLogin();
     }
 
-
+ */
     /*
     private Executor executor;
 
