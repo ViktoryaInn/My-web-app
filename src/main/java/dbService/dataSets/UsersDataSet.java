@@ -16,6 +16,8 @@ public class UsersDataSet {
     @Column(name = "email")
     private String email;
 
+    public UsersDataSet(){}
+
     public UsersDataSet(String login, String password, String email){
         this.login = login;
         this.password = password;

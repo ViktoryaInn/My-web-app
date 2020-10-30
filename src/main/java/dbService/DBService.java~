@@ -32,8 +32,7 @@ public class DBService {
             session.close();
             return dataSet;
         }catch (HibernateException e){
-            //throw new HibernateException(e);
-            return null;
+            throw new HibernateException(e);
         }
     }
 

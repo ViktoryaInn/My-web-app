@@ -1,5 +1,0 @@
-127.0.0.1 - - [29/Oct/2020:21:32:52 +0300] "GET /logIn HTTP/1.1" 200 537 http-bio-8000-exec-1 2748
-0:0:0:0:0:0:0:1 - - [29/Oct/2020:21:33:03 +0300] "GET /registration HTTP/1.1" 200 538 http-bio-8000-exec-6 312
-0:0:0:0:0:0:0:1 - - [29/Oct/2020:21:33:27 +0300] "POST /registration HTTP/1.1" 200 537 http-bio-8000-exec-9 809
-0:0:0:0:0:0:0:1 - - [29/Oct/2020:21:33:35 +0300] "POST /logIn HTTP/1.1" 302 - http-bio-8000-exec-3 157
-0:0:0:0:0:0:0:1 - - [29/Oct/2020:21:33:36 +0300] "GET /files?path=C:\Users\someUser HTTP/1.1" 200 659 http-bio-8000-exec-3 724

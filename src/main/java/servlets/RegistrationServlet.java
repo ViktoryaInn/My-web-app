@@ -1,5 +1,6 @@
 package servlets;
 
+import org.hibernate.HibernateException;
 import service.AccountService;
 import service.UserProfile;
 
@@ -35,12 +36,10 @@ public class RegistrationServlet extends HttpServlet {
             return;
         }
 
-        try {
-            if(accountService.addNewUser(login, password, email)){
-                req.getRequestDispatcher("logIn.jsp").forward(req,resp);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        if(accountService.addNewUser(login, password, email)){
+            req.getRequestDispatcher("logIn.jsp").forward(req,resp);
+        }else {
+            resp.getWriter().println("User with such login has already exist");
         }
     }
 }

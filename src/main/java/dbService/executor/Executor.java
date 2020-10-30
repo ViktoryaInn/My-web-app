@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Executor {
-
     private final Connection connection;
+
     public Executor(Connection connection){
         this.connection = connection;
     }

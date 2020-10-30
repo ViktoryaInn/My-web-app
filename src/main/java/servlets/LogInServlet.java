@@ -1,6 +1,7 @@
 package servlets;
 
 import dbService.dataSets.UsersDataSet;
+import org.hibernate.HibernateException;
 import service.AccountService;
 import service.UserProfile;
 
@@ -28,17 +29,13 @@ public class LogInServlet extends HttpServlet {
         String password = req.getParameter("password");
         String email = req.getParameter("email");
 
-        UsersDataSet authUser = new UsersDataSet(login, password, email);
+        UsersDataSet authUser = new UsersDataSet(login, password, null);
 
-        try {
-            if(accountService.authorizateUser(authUser, req.getSession().getId())){
-                String path = "http://localhost:8000/files?path=C:\\Users\\" + login;
-                resp.sendRedirect(path);
-            }else {
-                req.getRequestDispatcher("/registration.jsp").forward(req, resp);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        if(accountService.authorizateUser(authUser, req.getSession().getId())){
+            String path = "http://localhost:8000/files?path=C:\\Users\\" + login;
+            resp.sendRedirect(path);
+        }else {
+            req.getRequestDispatcher("/registration.jsp").forward(req, resp);
         }
     }
 }
